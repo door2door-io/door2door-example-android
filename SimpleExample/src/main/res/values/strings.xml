@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">"mobility-analytics-example-android "</string>
+    <string name="recordAnEvent">Record an event</string>
+</resources>
