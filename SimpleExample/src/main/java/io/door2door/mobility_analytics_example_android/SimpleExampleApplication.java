@@ -20,6 +20,7 @@ public class SimpleExampleApplication extends Application {
     }
 
     public MobilityAnalytics getMobilityAnalytics() {
+        // lazy load
         if (mobilityAnalytics == null) {
             // setup the initializations parameters for the mobility analytics
             InitializationParameters initializationParameters = new InitializationParameters();
