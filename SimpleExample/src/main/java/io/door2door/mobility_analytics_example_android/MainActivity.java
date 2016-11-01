@@ -1,20 +1,16 @@
 package io.door2door.mobility_analytics_example_android;
 
-import android.app.Application;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
 import io.door2door.analytics.api.MobilityAnalytics;
 import io.door2door.analytics.api.model.CreateTripEvent;
-import io.door2door.analytics.api.model.InitializationParameters;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-
     private Button recordAnEventButton;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
