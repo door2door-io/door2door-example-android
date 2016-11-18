@@ -5,8 +5,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
+import java.util.Date;
+
 import io.door2door.analytics.api.MobilityAnalytics;
-import io.door2door.analytics.api.model.CreateTripEvent;
+import io.door2door.analytics.api.model.SearchTripEvent;
+import io.door2door.analytics.base.model.ModeOfTransportation;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -27,21 +30,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         MobilityAnalytics mobilityAnalytics = application.getMobilityAnalytics();
 
         // prepare a sample event for tracking a trip creation
-        CreateTripEvent event = new CreateTripEvent.CreateTripEventBuilder()
-                .setOriginLatitude(52.529919)
-                .setOriginLongitude(13.403067)
-                .setOriginName("Door2Door HQ")
-                .setOriginStreet("Torstrasse 109")
-                .setOriginCity("Berlin")
-                .setOriginPostalCode("10119")
-                .setOriginCountry("Germany")
-                .setDestinationLatitude(52.522258)
-                .setDestinationLongitude(13.412678)
-                .setDestinationName("Alexanderplatz")
-                .setDestinationStreet("AlexanderplatzStreet")
-                .setDestinationCity("BerlinCity")
-                .setDestinationPostalCode("10178")
-                .setDestinationCountry("GermanyCountry")
+        SearchTripEvent event = new SearchTripEvent.SearchTripEventBuilder()
+                .setDepartureTimestamp(new Date(1479198911636L)) // some dummy date in millis
+                .setDepartureLatitude(52.529919)
+                .setDepartureLongitude(13.403067)
+                .setDepartureName("Door2Door HQ")
+                .setDepartureStreet("Torstrasse 109")
+                .setDepartureCity("Berlin")
+                .setDeparturePostalCode("10119")
+                .setDepartureCountry("Germany")
+                .setArrivalTimestamp(new Date(1479198922313L)) // some dummy date in millis
+                .setArrivalLatitude(52.522258)
+                .setArrivalLongitude(13.412678)
+                .setArrivalName("Alexanderplatz")
+                .setArrivalStreet("AlexanderplatzStreet")
+                .setArrivalCity("BerlinCity")
+                .setArrivalPostalCode("10178")
+                .setArrivalCountry("GermanyCountry")
+                .addModeOfTransportation(ModeOfTransportation.BIKE_SHARING)
+                .addModeOfTransportation(ModeOfTransportation.CAR_SHARING)
                 .build();
 
         // send the event to the mobility analytics instance
