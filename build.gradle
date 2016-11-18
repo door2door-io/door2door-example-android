@@ -15,25 +15,33 @@ buildscript {
     }
 }
 
+ext {
+    // configuration for loading the URL, username and password for the private Door2Door maven repo
+    artifactoryUrl = project.hasProperty('artifactory_contextUrl') ? artifactory_contextUrl : System.getenv('artifactory_contextUrl')
+    artifactoryUser = project.hasProperty('artifactory_user') ? artifactory_user : System.getenv('artifactory_user')
+    artifactoryPassword = project.hasProperty('artifactory_password') ? artifactory_password : System.getenv('artifactory_password')
+}
+
+
 allprojects {
     repositories {
         jcenter()
 
         // Door2Door private release repository
         maven {
-            url "${artifactory_contextUrl}/libs-release"
+            url "${artifactoryUrl}/libs-release"
             credentials {
-                username = artifactory_user
-                password = artifactory_password
+                username = artifactoryUser
+                password = artifactoryPassword
             }
         }
 
         // Door2Door private snapshot repository
         maven {
-            url "${artifactory_contextUrl}/libs-snapshot"
+            url "${artifactoryUrl}/libs-snapshot"
             credentials {
-                username = artifactory_user
-                password = artifactory_password
+                username = artifactoryUser
+                password = artifactoryPassword
             }
         }
     }
