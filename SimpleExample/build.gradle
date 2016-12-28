@@ -5,7 +5,7 @@ android {
     buildToolsVersion "25.0.0"
     defaultConfig {
         applicationId "io.door2door.mobility_analytics_example_android"
-        minSdkVersion 16
+        minSdkVersion 14
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
@@ -20,6 +20,6 @@ android {
 }
 
 dependencies {
-    compile 'com.android.support:appcompat-v7:25.0.1'
-    compile 'io.door2door:mobility-analytics-sdk:0.0.4'
+    compile 'com.android.support:appcompat-v7:25.1.0'
+    compile 'io.door2door:mobility-analytics-sdk:0.0.5-SNAPSHOT'
 }
