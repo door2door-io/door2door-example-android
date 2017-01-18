@@ -1,4 +1,4 @@
-# mobility-analytics-example-android
+# door2door-example-android
 
 [![Build Status](https://travis-ci.com/door2door-io/mobility-analytics-example-android.svg?token=pjx3zDtzXuU6uwdz9wez&branch=master)](https://travis-ci.com/door2door-io/mobility-analytics-example-android)
 
