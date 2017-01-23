@@ -17,24 +17,6 @@ ext {
 allprojects {
     repositories {
         jcenter()
-
-        // Door2Door private release repository
-        maven {
-            url "${artifactoryUrl}/libs-release"
-            credentials {
-                username = artifactoryUser
-                password = artifactoryPassword
-            }
-        }
-
-        // Door2Door private snapshot repository
-        maven {
-            url "${artifactoryUrl}/libs-snapshot"
-            credentials {
-                username = artifactoryUser
-                password = artifactoryPassword
-            }
-        }
     }
 }
 
