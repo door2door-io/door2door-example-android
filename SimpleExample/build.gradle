@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 25
-    buildToolsVersion "25.0.0"
+    buildToolsVersion "25.0.2"
     defaultConfig {
         applicationId "io.door2door.mobility_analytics_example_android"
         minSdkVersion 14
@@ -17,9 +17,12 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    lintOptions {
+        lintConfig file('lint.xml')
+    }
 }
 
 dependencies {
-    compile 'com.android.support:appcompat-v7:25.1.0'
+    compile 'com.android.support:appcompat-v7:25.3.0'
     compile 'io.door2door:mobility-analytics-sdk:0.0.7'
 }
