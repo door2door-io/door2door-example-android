@@ -26,6 +26,8 @@ public class SimpleExampleApplication extends Application {
             InitializationParameters initializationParameters =
                     new InitializationParameters.InitializationParametersBuilder()
                             .setApplicationName("SimpleExample")
+                            // make sure the key is kept in a safe place
+                            .setAuthorizationKey("de99a0adeefac13bbd23949b0ade7eea1cfcbc3a57e6d589bcbcc5be51da0a8f")
                             .setVersionName("1.0.0")
                             .setLoggerEnabled(true)
                             .setEnvironment(Environment.TEST)
